@@ -9,7 +9,13 @@ function recommendationCard(recommendation) {
 
   const footer = document.createElement("footer");
   const attribution = document.createElement("div");
-  attribution.innerHTML = `<strong>${recommendation.name}</strong><p>${recommendation.role}, ${recommendation.company}</p>`;
+  const name = document.createElement("strong");
+  name.textContent = recommendation.name;
+
+  const title = document.createElement("p");
+  title.textContent = `${recommendation.role}, ${recommendation.company}`;
+
+  attribution.append(name, title);
 
   const detail = document.createElement("p");
   detail.textContent = recommendation.relationship;
